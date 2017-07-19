@@ -1,0 +1,43 @@
+##########  ############################################################
+##  Announce when people come or go.
+## Announce over all Chromecast Audios
+######################################################################
+- alias: 'People Greeting'
+
+  trigger:
+    - platform: state
+      entity_id: group.sebas_trackers
+      from: 'not_home'
+      to: 'home'
+      for: '00:02:00'
+  condition:
+    condition: and
+    conditions:
+    - condition: time
+      after: '09:00:00'
+    - condition: time
+      before: '21:30:00'
+    - condition: state
+      entity_id: input_boolean.speech_notifications
+      state: 'on'
+
+  action:
+    service: tts.amazon_polly_say
+    entity_id: media_player.speaker_1
+    data_template:
+      message: >
+        <speak>
+        <break time='.9s' />
+        {%if now().strftime("%a") == 'Wed' or now().strftime("%a") == 'Sun'%}
+          Today is {{now().strftime("%A")}} and {{now().strftime("%A")}} is garbage day.
+        {%endif%}
+        <break time='.9s' />
+        {%if now().strftime("%a") == 'Wed'%}
+          Both Recycling and regular Garbage goes out. Please take out all of the garbage cans tonight.
+        {%endif%}
+        <break time='.9s' />
+        {%if now().strftime("%a") == 'Thu'%}
+          Today is jacuzzi products, go put chlorine now.
+        {%endif%}
+        </speak>
+      cache: true

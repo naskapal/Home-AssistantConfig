@@ -1,0 +1,49 @@
+##################################################################################
+##                               Custom sensros config                          ##
+##################################################################################
+
+##################################################################################
+##                               Custom Fibaro config                           ##
+##################################################################################
+
+#Entrance fibaro
+  sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+    friendly_name: FIBARO Sensor Temperature
+  sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+    friendly_name: FIBARO Sensor Seismic Intensity
+  sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+    hidden: true
+  sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+    hidden: true
+  sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+    hidden: true
+  sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+    friendly_name: FIBARO Sensor Luminance
+    
+##################################################################################
+##                               Custom ZWave config                            ##
+##################################################################################
+
+#Patio door sensor    
+  zwave.aeotec_zw112_door_window_sensor_6:
+    friendly_name: Patio Door Sensor
+
+#Basement window sensor        
+  zwave.aeotec_zw112_door_window_sensor_6_2:
+    friendly_name: Basement Windows Sensor
+  sensor.bedroom_door_status:
+    icon: mdi:glassdoor
+
+##################################################################################
+##                               Custom Weather config                          ##
+##################################################################################
+    
+  sensor.pws_alerts:
+    friendly_name: Alerts
+  sensor.pws_temp_c:
+    friendly_name: Outside Temp
+    icon: mdi:temperature-celsius
+    
+  sensor.google:
+    friendly_name: 'Google'
+    icon: mdi:google  

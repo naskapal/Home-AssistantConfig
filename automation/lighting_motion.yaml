@@ -1,0 +1,50 @@
+##################################################################################
+##                               Lights Automations                             ##
+##################################################################################
+
+
+##################################################################################
+##                               Dining Room                                    ##
+##################################################################################
+
+# test for tts on lights trigger
+  - alias: "Dining room lights on"
+    trigger:
+      - platform: state
+        entity_id: light.cusine
+        to: 'on'
+    action:
+      service: tts.amazon_polly_say
+      entity_id: media_player.ker_1
+      data:
+        message: 'Lights turned on'
+
+##################################################################################
+##                               Entrance                                       ##
+##################################################################################
+
+#turn on lights when motion detected AND lux is below 20
+  - alias: "Stairs Lights on when dark"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        to: 'on'
+    condition:  
+      - condition: numeric_state
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+        below: 4
+    action:
+      service: homeassistant.turn_on
+      entity_id: group.main_stairs_lights
+
+# turn of lights after 10 seconds from no motion - maybe do it with sequence..
+  - alias: Turn off stairs light 10 seconds after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      to: 'off'
+      for:
+        seconds: 10
+    action:
+      service: homeassistant.turn_off
+      entity_id: group.main_stairs_lights

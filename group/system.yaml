@@ -1,0 +1,136 @@
+##################################################################################
+##                               System Groups                                  ##
+##################################################################################
+
+  home_modes:
+    control: hidden
+    entities:
+      - input_boolean.guest_mode
+      - input_boolean.alert_mode
+      - input_boolean.speech_notifications
+      - input_boolean.last_message
+
+# Hydroquebec
+  Main_Hydro_Group:
+    name: Hydro Quebec
+    entities:
+      - sensor.hydroquebec_yesterday_total_consumption
+      - sensor.hydroquebec_yesterday_average_temperature
+      - sensor.hydroquebec_period_total_consumption
+      
+#System info group      
+  Main_Sysinfo:
+    name: system Monitor
+    entities:
+      - sensor.ram_free
+      - sensor.disk_use_
+      - sensor.cpu_use
+      - sensor.last_boot
+      - sensor.since_last_boot
+
+#Services sensors
+  Main_Services:
+    name: Services  
+    entities:
+      - binary_sensor.is_habridge_online
+      - binary_sensor.is_harmonybridge_online
+      - binary_sensor.is_appletv_online
+      - binary_sensor.is_cam1_online
+      - binary_sensor.is_cam2_online
+      - binary_sensor.is_cam3_online
+      - binary_sensor.is_philips_online
+      - binary_sensor.is_police_scanner_online
+      - binary_sensor.is_police_scanner_service
+      - binary_sensor.is_real_harmony_online
+      - binary_sensor.is_unifi_conroller_service
+      - binary_sensor.is_unifiap_online
+            
+#Weather group      
+  Main_Weather:
+    name: Weather
+    entities:
+      - sensor.pws_alerts
+      - sensor.pws_temp_c
+      - sensor.pws_feelslike_c
+      - sensor.pws_heat_index_c
+      - sensor.pws_precip_today_string
+      - sensor.pws_precip_1d_mm
+      - sensor.pws_precip_1d
+      - sensor.pws_visibility_km
+      - sensor.pws_wind_dir
+      - sensor.pws_wind_kph
+      - sensor.pws_wind_1d_kph
+      - sensor.pws_precip_today_string
+
+ #Sensors group      
+  Main_Sensors:
+    name: Windows/Doors Sensors
+    entities:
+      - zwave.aeotec_zw112_door_window_sensor_6
+      - zwave.aeotec_zw112_door_window_sensor_6_2
+      
+  Main_Entrance_Sensor:
+    name: Fibaro Entrance Sensor
+    entities:
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+      - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+      - sensor.bat_fibaro
+      
+  Main_Doors_Sensor:
+    name: ZWave Doors Sensor
+    entities:
+      - sensor.bedroom_door_status
+      - sensor.basement_window_status
+      - sensor.bat_patio_sensor
+      - sensor.bat_basement_window_sensor
+
+#Tracker group
+  Main_Trackers:
+    name: Trackers
+    entities:
+      - group.Sebas_trackers
+      - device_tracker.iphonedegen
+
+#Automtion group
+  Main_Automations:
+    name: Automations
+    entities:
+      - automation.dining_room_lights_on
+      - automation.stairs_lights_on_when_dark
+      - automation.turn_off_stairs_light_10_seconds_after_last_movement
+
+#Dual trackers for efficiency
+  Sebas_trackers:
+    name: Sebas trackers
+    entities:
+      - device_tracker.devicename
+      - device_tracker.devicename_namp
+
+# interent ping group
+  internet:
+    name: Internet
+    entities:
+      - sensor.router
+      - sensor.google
+      
+  fibaro_not_used:
+    name: Fibaro other sensors
+    entities:
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+      - sensor.fibaro_system_fgms001zw5_motion_sensor_general
+  
+  aeotec_not_used:
+    name: Aeotec other sensors
+    entities:
+      - sensor.aeotec_zw112_door_window_sensor_6_access_control
+      - sensor.aeotec_zw112_door_window_sensor_6_alarm_level
+      - sensor.aeotec_zw112_door_window_sensor_6_alarm_type
+      - sensor.aeotec_zw112_door_window_sensor_6_sourcenodeid
+      
+#  cam_motion_sensor:
+#    name: Camera motions
+#    entities:
+#      - sensor.back_yard_cam_motion_detected
+#      - sensor.parking_cam_motion_detected

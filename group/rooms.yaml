@@ -1,0 +1,32 @@
+##################################################################################
+##                               Rooms                                          ##
+##################################################################################
+  
+  Main_Livingroom_Lights:
+    name: Living Room Lights
+    entities:
+      - light.salon
+      - light.salon1
+      - light.salon2
+  Main_Dining_Lights:
+    name: Dining Room Lights
+    entities:
+      - light.cusine
+      - light.cusine1
+      - light.cuisine2
+      - light.cusine3
+      - light.cuisine4
+      - light.cusine5
+  Main_Basement_lights:
+    name: Basement Lights
+    entities:
+      - light.enbas
+      - light.enbas_1
+      - light.enbas_2
+      - light.enbas3
+  Main_Stairs_lights:
+    name: Stairs Lights
+    entities:
+      - light.living
+      - light.hue_color_lamp_1
+      - light.hue_color_lamp_2

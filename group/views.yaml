@@ -1,0 +1,72 @@
+##################################################################################
+##                               Views and Default Groups                       ##
+##################################################################################
+
+#Home TAB
+  default_view:
+    view: yes 
+    entities:
+      - group.main_entrance_sensor
+      - group.main_doors_sensor
+      - group.main_trackers
+      - group.main_automations
+      - group.home_modes
+      - group.internet
+      - group.cam_motion_sensor
+
+# weather view
+  Main_Weather_view:
+    name: Weather
+    view: yes
+    entities:
+      - group.main_weather
+
+# energy view
+  Main_Energy_view:
+    name: Energy
+    view: yes
+    entities:
+      - group.main_hydro_group
+      
+ # System TAB
+  Main_System_View:
+    name: System
+    view: yes
+    entities:
+      - group.main_sysinfo
+      - group.main_services
+      
+# Cam TAB      
+  Main_Cam_View:
+    name: Camera
+    view: yes
+    entities:
+      - camera.back_yard_cam
+      - camera.parking_cam
+      #- camera.hallway_cam
+      #- camera.hallway2_cam
+
+# Rooms TAB      
+  Main_Rooms_View:
+    name: Rooms
+    view: yes
+    entities:
+      - group.main_basement_lights
+      - group.main_dining_lights
+      - group.main_stairs_lights
+      - group.main_livingroom_lights
+      - media_player.chromecast0743
+
+# Main others
+  Main_Others_View:
+    name: Others
+    view: yes
+    entities:
+      - light.hue_color_lamp_3
+      - media_player.speaker_1
+      - media_player.speaker_2
+      - remote.harmony_hub
+      - switch.livingroomtvstbdenon
+      - group.fibaro_not_used
+      - group.aeotec_not_used
+      - group.Sebas_trackers

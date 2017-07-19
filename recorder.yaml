@@ -1,0 +1,25 @@
+############################################################
+# recorder
+############################################################
+
+purge_days: 4
+exclude:
+  entities:
+    - sensor.ram_free
+    - sensor.disk_use_
+    - sensor.cpu_use
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.pws_alerts
+    - sensor.pws_temp_c
+    - sensor.pws_feelslike_c
+    - sensor.pws_heat_index_c
+    - sensor.pws_precip_today_string
+    - sensor.pws_precip_1d_mm
+    - sensor.pws_precip_1d
+    - sensor.pws_visibility_km
+    - sensor.pws_wind_dir
+    - sensor.pws_wind_kph
+    - sensor.pws_wind_1d_kph
+    - sensor.pws_precip_today_string
+    - sun.sun

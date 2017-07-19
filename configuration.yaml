@@ -1,0 +1,183 @@
+##################################################################################
+##                               Global Settings                                ##
+##################################################################################
+
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat_num
+  longitude: !secret long_num
+
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 315
+
+  # metric for Metric, imperial for Imperial 
+  unit_system: metric
+
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Toronto
+
+# Customizations
+  customize: !include_dir_merge_named customize/
+  
+##################################################################################
+##                               Entity Includes                                ##
+##################################################################################
+
+# Automations
+automation: !include_dir_merge_list automation/
+
+# Binary Sensors
+binary_sensor: !include binary_sensor.yaml
+
+# Cameras
+#camera: !include camera.yaml
+
+# amcrest
+#amcrest: !include camera.yaml
+#camera:
+#  - platform: amcrest
+  
+#amcrest:
+#  - host: 192.168.67.103
+#    username: admin
+#    password: !secret cam1_pass
+#    name: Back Yard Cam
+#    resolution: high
+#    stream_source: snapshot
+    #sensors:
+    #  - motion_detector
+  
+#  - host: 192.168.67.112
+#    username: admin
+#    password: !secret cam2_pass
+#    name: Parking Cam
+#    resolution: high
+#    stream_source: snapshot
+    #sensors:
+    #  - motion_detector
+        
+# Device Trackers
+device_tracker: !include device_tracker.yaml
+
+# Groups
+group: !include_dir_merge_named group/
+
+# Input Boolean
+input_boolean: !include input_boolean.yaml
+
+# Input Select
+#input_select: !include input_select.yaml
+
+# Lights
+#light: !include light.yaml
+
+# Logbook
+logbook: #!include logbook.yaml
+
+#logger: !include logger.yaml
+
+# Recorder
+recorder: #!include recorder.yaml
+
+# Scenes
+#scene: !include scene.yaml
+
+# Scripts
+#script: !include script.yaml
+
+# Sensors
+sensor: !include sensor.yaml
+
+# Switches
+switch: !include switch.yaml
+
+# Weblinks
+#weblink: !include weblink.yaml
+
+# Zones
+#zone: !include zone.yaml  
+
+# Show links to resources in log and frontend
+#introduction:
+
+##################################################################################
+##                                  Platforms                                   ##
+##################################################################################
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/homeassistant/lib/python3.4/site-packages/python_openzwave/ozw_config
+
+light:
+  platform: hue
+  host: 192.168.67.106
+
+##################################################################################
+##                                    Options                                   ##
+##################################################################################
+
+# Enables the frontend
+frontend:
+
+# Configures frontend options
+http:
+#  base_url: !secret http_url
+  api_password: !secret http_password
+#  ssl_certificate: !secret http_ssl_certificate
+#  ssl_key: !secret http_ssl_key
+
+# Checks for available updates
+updater:
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    philips_hue
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Include Config panel in front end
+config:
+
+# Enables support for tracking state changes over time.
+history:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - light
+      - binary_sensor
+
+# Text to speech
+tts:
+  - platform: amazon_polly
+    aws_access_key_id: !secret aws_api_key
+    aws_secret_access_key: !secret aws_access_key
+    region_name: 'us-east-2'
+    text_type: ssml
+    cache: True
+
+# Track the sun
+sun:
+
+media_player:
+  - platform: plex
+    entity_namespace: 'plex'
+    include_non_clients: true
+    scan_interval: 5
+    show_all_controls: false
+    use_custom_entity_ids: true
+    use_episode_art: true
+  - platform: vlc
+    name: speaker_1
+    arguments: '--aout alsa --alsa-audio-device=hw:0,0'
+  - platform: vlc
+    name: speaker_2
+    arguments: '--alsa-audio-device=hw:0,0'
+

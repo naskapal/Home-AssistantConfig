@@ -1,0 +1,9 @@
+##################################################################################
+##                               Custom Binary Sensors names +                  ##
+##################################################################################
+
+# Fibaro binary sensors
+  binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+    friendly_name: FIBARO Sensor General
+  binary_sensor.google:
+      hidden: true
