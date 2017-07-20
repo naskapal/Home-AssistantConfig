@@ -81,6 +81,7 @@ logbook: #!include logbook.yaml
 
 # Recorder
 recorder: #!include recorder.yaml
+  db_url: !secret db_url
 
 # Scenes
 #scene: !include scene.yaml
