@@ -1,0 +1,77 @@
+name: Alarm Panel
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+#pan_zoom:
+#warnings:
+# Example of chaining for multiple replaces.
+# '${entity.state ? entity.state.replace("not_home", "away").replace("Miguel_Work", "At Work") : "undefined"}'
+
+groups:
+
+  - name: Alarm
+    entities:
+      - input_boolean.alert_mode
+    text_template: '${entity.state ? entity.state : "undefined"}'
+    states:
+      - state: 'on'
+        class: 'text-home'
+      - state: 'off'
+        class: 'text-away'
+
+  - name: Family
+    entities:
+      - device_tracker.sebastrackers
+      - device_tracker.iphonedegen
+    text_template: '${entity.state ? entity.state.replace("not_home", "away") : "undefined"}'
+
+    states:
+      - state: 'home'
+        class: 'text-home'
+      - state: 'not_home'
+        class: 'text-away'
+
+  - name: input_booleans
+    entities:
+      - input_boolean.guest_mode
+ 
+    states:
+      - state: 'on'
+        class: 'button-on'
+      - state: 'off'
+        class: 'button-off'
+    action:
+      domain: homeassistant
+      service: toggle
+
+  - name: Lights
+    entities:
+      - group.main_basement_lights
+      - group.main_dining_lights
+      - group.main_stairs_lights
+      - group.main_livingroom_lights
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: toggle
+
+  - name: Entry Points
+    entities:
+      - sensor.bedroom_door_status
+      - sensor.basement_window_status
+    states:
+      - state: 'Closed'
+        class: 'doorbell-off'
+      - state: 'Open'
+        class: 'doorbell-on'
+
+  - name: Motion Sensors
+    entities:
+      - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    states:
+      - state: 'off'
+        class: 'info-background'
+      - state: 'on'
+        class: 'warning-background'
