@@ -17,7 +17,32 @@
       - sensor.hydroquebec_yesterday_total_consumption
       - sensor.hydroquebec_yesterday_average_temperature
       - sensor.hydroquebec_period_total_consumption
-      
+
+# plex
+  Main_Plex_Group:
+    name: Plex
+    entities:
+      - sensor.plex
+#chromecast
+  Main_Chromecast_Group:
+    name: Chromecast
+    entities:
+      - sensor.livingroomchromecast
+#channels
+  Main_Channels_Group:
+    name: Channels
+    control: hidden
+    entities:
+      - script.rds1
+      - script.rds2
+      - script.tva
+      - script.vtele
+      - script.serieplus
+      - script.casa
+      - script.tvon
+      - script.tvoff
+      - script.tv_only_off
+
 #System info group      
   Main_Sysinfo:
     name: system Monitor
@@ -92,6 +117,12 @@
       - group.Sebas_trackers
       - device_tracker.iphonedegen
 
+  People_Status:
+    name: People Status
+    entities:
+      - sensor.sebas_status
+      - sensor.gen_status
+
 #Automtion group
   Main_Automations:
     name: Automations
@@ -105,7 +136,7 @@
     name: Sebas trackers
     entities:
       - device_tracker.devicename
-      - device_tracker.devicename_namp
+#      - device_tracker.devicename_namp
 
 # interent ping group
   internet:
@@ -129,8 +160,9 @@
       - sensor.aeotec_zw112_door_window_sensor_6_alarm_type
       - sensor.aeotec_zw112_door_window_sensor_6_sourcenodeid
       
-#  cam_motion_sensor:
-#    name: Camera motions
-#    entities:
-#      - sensor.back_yard_cam_motion_detected
-#      - sensor.parking_cam_motion_detected
+  cam_motion_sensor:
+    name: Camera motions
+    entities:
+      - sensor.back_yard_cam_motion_detected
+      - sensor.parking_cam_motion_detected
+      - sensor.side_cam_motion_detected

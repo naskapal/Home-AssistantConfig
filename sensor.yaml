@@ -128,3 +128,27 @@
       google:
         value_template: '{% if is_state("binary_sensor.google", "on") %} {{ states.binary_sensor.google.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
         unit_of_measurement: 'ms'
+
+##################################################################################
+##                               presence sensor                                ##
+##################################################################################
+
+  - platform: template
+    sensors:
+      sebas_status:
+        value_template: '{{ states.input_select.sebas_status_dropdown.state }}'
+        friendly_name: 'Sebas'
+        entity_id: input_select.sebas_status_dropdown
+      gen_status:
+        value_template: '{{ states.input_select.gen_status_dropdown.state }}'
+        friendly_name: 'Gen'
+        entity_id: input_select.gen_status_dropdown
+      livingroomchromecast:
+        friendly_name: 'Living Room Chromecast'
+        value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"
+  - platform: plex
+    host: 192.168.67.110
+    name: plex
+    username: !secret plexu
+    password: !secret plexp
+    token: !secret plext

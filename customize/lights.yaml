@@ -42,5 +42,9 @@
     
   light.hue_color_lamp_1:
     hidden: true
+  light.marche1:
+    hidden: true
+  light.marche2:
+    hidden: true
   light.hue_color_lamp_2:
     hidden: true

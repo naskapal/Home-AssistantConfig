@@ -9,11 +9,13 @@
       - group.main_entrance_sensor
       - group.main_doors_sensor
       - group.main_trackers
+      - group.people_status
+      - group.main_channels_group
       - group.main_automations
       - group.home_modes
       - group.internet
       - group.cam_motion_sensor
-
+      - camera.yvo
 # weather view
   Main_Weather_view:
     name: Weather
@@ -43,7 +45,7 @@
     entities:
       - camera.back_yard_cam
       - camera.parking_cam
-      #- camera.hallway_cam
+      #- camera.side_cam
       #- camera.hallway2_cam
 
 # Rooms TAB      
@@ -55,7 +57,7 @@
       - group.main_dining_lights
       - group.main_stairs_lights
       - group.main_livingroom_lights
-      - media_player.chromecast0743
+#      - media_player.chromecast0743
 
 # Main others
   Main_Others_View:
@@ -64,9 +66,11 @@
     entities:
       - light.hue_color_lamp_3
       - media_player.speaker_1
+      - group.main_plex_group
       - media_player.speaker_2
-      - remote.harmony_hub
+      - remote.harmony
+      - group.main_chromecast_group
       - switch.livingroomtvstbdenon
       - group.fibaro_not_used
       - group.aeotec_not_used
-      - group.Sebas_trackers
+      #- group.Sebas_trackers

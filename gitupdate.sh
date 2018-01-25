@@ -1,5 +1,6 @@
 cd /home/homeassistant/.homeassistant
-source /srv/homeassistant/homeassistant_venv/bin/activate
+sudo python3 -m venv homeassistant
+source /srv/homeassistant/bin/activate
 hass --script check_config
 
 git add .

@@ -7,6 +7,7 @@
 ##################################################################################
 
   - platform: unifi
+    track_new_devices: false
     host: 192.168.67.105
     username: admin
     port: 9443
@@ -22,10 +23,10 @@
 #    hosts:
 #      - 192.168.67.104
 
-  - platform: nmap_tracker
-    hosts:
-      - 192.168.67.150
-    home_interval: 10
-    interval_seconds: 30
+#  - platform: nmap_tracker
+#    hosts:
+#      - 192.168.67.150
+#    home_interval: 10
+#    interval_seconds: 30
     
 #  - platform: bluetooth_tracker

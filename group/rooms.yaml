@@ -30,3 +30,5 @@
       - light.living
       - light.hue_color_lamp_1
       - light.hue_color_lamp_2
+      - light.marche1
+      - light.marche2

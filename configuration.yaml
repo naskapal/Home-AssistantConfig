@@ -46,25 +46,39 @@ binary_sensor: !include binary_sensor.yaml
 #amcrest: !include camera.yaml
 #camera:
 #  - platform: amcrest
+camera:
+  platform: generic
+  still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=XLA&brand=wui&num=1&delay=15&type=C0R&frame=0&scale=1.000&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=1&lightning=0&smooth=0&rand=25277952&lat=0&lon=0&label=you
+  name: YVO
   
-#amcrest:
-#  - host: 192.168.67.103
-#    username: admin
-#    password: !secret cam1_pass
-#    name: Back Yard Cam
+amcrest:
+  - host: 192.168.67.103
+    username: admin
+    password: !secret cam1_pass
+    name: Back Yard Cam
 #    resolution: high
 #    stream_source: snapshot
-    #sensors:
-    #  - motion_detector
+    sensors:
+      - motion_detector
   
-#  - host: 192.168.67.112
-#    username: admin
-#    password: !secret cam2_pass
-#    name: Parking Cam
+  - host: 192.168.67.112
+    username: admin
+    password: !secret cam2_pass
+    name: Parking Cam
 #    resolution: high
 #    stream_source: snapshot
-    #sensors:
-    #  - motion_detector
+    sensors:
+      - motion_detector
+
+#  - host: 192.168.67.114
+#    username: admin
+#    password: !secret cam3_pass
+#    authentication: basic
+#    name: Side Cam
+#    resolution: high
+#    stream_source: snapshot
+#    sensors:
+#      - motion_detector
         
 # Device Trackers
 device_tracker: !include device_tracker.yaml
@@ -78,8 +92,102 @@ input_boolean: !include input_boolean.yaml
 # Input Select
 #input_select: !include input_select.yaml
 
+input_select:
+  sebas_status_dropdown:
+    name: Sebas
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Home
+  gen_status_dropdown:
+    name: Gen
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Home
+
+remote:
+  - platform: harmony
+    name: LivingRoom
+    host: 192.168.67.107
+script:
+  rds1:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "8", "0", "OK"]
+  rds2:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "8", "1", "OK"]
+  tva:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "0", "4", "OK"]
+  vtele:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "0", "3", "OK"]
+  casa:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "5", "0", "OK"]
+  serieplus:
+    sequence:
+    - service: remote.send_command
+      entity_id: remote.livingroom
+      data:
+        device: 36799882
+        command: ["1", "8", "6", "0", "OK"]
+  tvon:
+    sequence:
+    - service: rest_command.tvon
+  tvoff:
+    sequence:
+    - service: rest_command.tvoff
+  tv_only_off:
+    sequence:
+    - service: rest_command.tv_only_off
+rest_command:
+  tvon:
+    method: put
+    url: 'http://192.168.67.104:8081/harmony/press'
+    payload: '{"device" : "36799863","button" : "PowerOn"},{"device" : "36799882","button" : "PowerOn"},{"device" : "36799868","button" : "PowerOn"}'
+  tvoff:
+    method: put
+    url: 'http://192.168.67.104:8081/harmony/press'
+    payload: '{"device" : "36799863","button" : "PowerOff"},{"device" : "36799882","button" : "PowerOff"},{"device" : "36799868","button" : "PowerOff"}'
+  tv_only_off:
+    method: put
+    url: 'http://192.168.67.104:8081/harmony/press'
+    payload: '{"device" : "36799863","button" : "PowerOff"}'
 # Lights
 #light: !include light.yaml
+
+notify:
+  - name: NOTIFIER_NAME
+    platform: nma
+    api_key: !secret nma
 
 # Logbook
 logbook: #!include logbook.yaml
@@ -117,11 +225,11 @@ switch: !include switch.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /srv/homeassistant/lib/python3.4/site-packages/python_openzwave/ozw_config
+  config_path: /srv/homeassistant/lib/python3.5/site-packages/python_openzwave/ozw_config
 
-light:
-  platform: hue
-  host: 192.168.67.106
+hue:
+  bridges:
+    - host: 192.168.67.106
 
 ##################################################################################
 ##                                    Options                                   ##
@@ -169,19 +277,13 @@ tts:
     aws_secret_access_key: !secret aws_access_key
     region_name: 'us-east-2'
     text_type: ssml
+    voice: Joanna
     cache: True
 
 # Track the sun
 sun:
 
 media_player:
-  - platform: plex
-    entity_namespace: 'plex'
-    include_non_clients: true
-    scan_interval: 5
-    show_all_controls: false
-    use_custom_entity_ids: true
-    use_episode_art: true
   - platform: vlc
     name: speaker_1
     arguments: '--aout alsa --alsa-audio-device=hw:0,0'

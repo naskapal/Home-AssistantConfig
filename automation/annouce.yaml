@@ -41,3 +41,130 @@
         {%endif%}
         </speak>
       cache: true
+
+
+- alias: Mark Sebas as just arrived
+  trigger:
+    - platform: state
+      entity_id: device_tracker.devicename
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sebas_status_dropdown
+        option: Just Arrived
+
+- alias: Mark Sebas as home
+  trigger:
+    - platform: state
+      entity_id: input_select.sebas_status_dropdown
+      to: 'Just Arrived'
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: input_select.sebas_status_dropdown
+      from: 'Just Left'
+      to: 'Just Arrived'
+  condition:
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sebas_status_dropdown
+        option: Home
+
+- alias: Mark Sebas as just left
+  trigger:
+    - platform: state
+      entity_id: device_tracker.devicename
+      from: 'home'
+      to: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sebas_status_dropdown
+        option: Just Left
+
+- alias: Mark Sebas as away
+  trigger:
+    - platform: state
+      entity_id: input_select.sebas_status_dropdown
+      to: 'Just Left'
+      for:
+        minutes: 10
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sebas_status_dropdown
+        option: Away
+
+- alias: Mark Sebas as just arrived
+  trigger:
+    - platform: state
+      entity_id: device_tracker.devicename
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sebas_status_dropdown
+        option: Just Arrived
+
+- alias: Mark Gen as home
+  trigger:
+    - platform: state
+      entity_id: input_select.gen_status_dropdown
+      to: 'Just Arrived'
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: input_select.gen_status_dropdown
+      from: 'Just Left'
+      to: 'Just Arrived'
+  condition:
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.gen_status_dropdown
+        option: Home
+
+- alias: Mark Gen as just left
+  trigger:
+    - platform: state
+      entity_id: device_tracker.iphonedegen
+      from: 'home'
+      to: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.gen_status_dropdown
+        option: Just Left
+
+- alias: Mark Gen as away
+  trigger:
+    - platform: state
+      entity_id: input_select.gen_status_dropdown
+      to: 'Just Left'
+      for:
+        minutes: 10
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.gen_status_dropdown
+        option: Away
+- alias: "RDS1 from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.sportchannels
+    to: 'RDS1'
+  action:
+    service: script.turn_on
+    entity_id: script.rds1
+- alias: "RDS2 from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.sportchannels
+    to: 'RDS2'
+  action:
+    service: script.turn_on
+    entity_id: script.rds2
