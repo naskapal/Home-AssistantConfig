@@ -56,13 +56,13 @@ amcrest:
 device_tracker: !include device_tracker.yaml
 
 # Groups
-group: !include_dir_merge_named group/
+group: !include_dir_merge_named group
 input_boolean: !include input_boolean.yaml
-input_select: !include_dir_merge_named input_select/
-script: !include_dir_merge_named script/
-rest_command: !include_dir_merge_named rest_command/
-sensor: !include_dir_merge_named sensor
-switch: !include_dir_merge_named switch
+input_select: !include_dir_merge_named input_select
+script: !include_dir_merge_named script
+rest_command: !include_dir_merge_named rest_command
+sensor: !include_dir_merge_list sensor
+switch: !include_dir_merge_list switch
 
 remote:
   - platform: harmony
