@@ -10,6 +10,7 @@ home-assistant.log
 home-assistant_v2.db
 *.db-journal
 lib
+homeassistant
 deps
 tts
 secrets.yaml
