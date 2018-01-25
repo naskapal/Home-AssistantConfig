@@ -1,31 +1,12 @@
-##################################################################################
-##                               Global Settings                                ##
-##################################################################################
-
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret lat_num
   longitude: !secret long_num
-
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 315
-
-  # metric for Metric, imperial for Imperial 
   unit_system: metric
-
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Toronto
-
-# Customizations
   customize: !include_dir_merge_named customize/
   
-##################################################################################
-##                               Entity Includes                                ##
-##################################################################################
-
 panel_custom: 
   - name: floorplan
     sidebar_title: Floorplan
@@ -33,19 +14,10 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
-# Automations
 automation: !include_dir_merge_list automation/
 
-# Binary Sensors
 binary_sensor: !include binary_sensor.yaml
 
-# Cameras
-#camera: !include camera.yaml
-
-# amcrest
-#amcrest: !include camera.yaml
-#camera:
-#  - platform: amcrest
 camera:
   platform: generic
   still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=XLA&brand=wui&num=1&delay=15&type=C0R&frame=0&scale=1.000&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=1&lightning=0&smooth=0&rand=25277952&lat=0&lon=0&label=you
@@ -80,108 +52,23 @@ amcrest:
 #    sensors:
 #      - motion_detector
         
-# Device Trackers
+
 device_tracker: !include device_tracker.yaml
 
 # Groups
 group: !include_dir_merge_named group/
-
-# Input Boolean
 input_boolean: !include input_boolean.yaml
-
-# Input Select
-#input_select: !include input_select.yaml
-
-input_select:
-  sebas_status_dropdown:
-    name: Sebas
-    options:
-      - Home
-      - Just Arrived
-      - Just Left
-      - Away
-      - Extended Away
-    initial: Home
-  gen_status_dropdown:
-    name: Gen
-    options:
-      - Home
-      - Just Arrived
-      - Just Left
-      - Away
-      - Extended Away
-    initial: Home
+input_select: !include_dir_merge_named input_select/
+script: !include_dir_merge_named script/
+rest_command: !include_dir_merge_named rest_command/
+sensor: !include_dir_merge_named sensor
+switch: !include_dir_merge_named switch
 
 remote:
   - platform: harmony
     name: LivingRoom
     host: 192.168.67.107
-script:
-  rds1:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "8", "0", "OK"]
-  rds2:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "8", "1", "OK"]
-  tva:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "0", "4", "OK"]
-  vtele:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "0", "3", "OK"]
-  casa:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "5", "0", "OK"]
-  serieplus:
-    sequence:
-    - service: remote.send_command
-      entity_id: remote.livingroom
-      data:
-        device: 36799882
-        command: ["1", "8", "6", "0", "OK"]
-  tvon:
-    sequence:
-    - service: rest_command.tvon
-  tvoff:
-    sequence:
-    - service: rest_command.tvoff
-  tv_only_off:
-    sequence:
-    - service: rest_command.tv_only_off
-rest_command:
-  tvon:
-    method: put
-    url: 'http://192.168.67.104:8081/harmony/press'
-    payload: '{"device" : "36799863","button" : "PowerOn"},{"device" : "36799882","button" : "PowerOn"},{"device" : "36799868","button" : "PowerOn"}'
-  tvoff:
-    method: put
-    url: 'http://192.168.67.104:8081/harmony/press'
-    payload: '{"device" : "36799863","button" : "PowerOff"},{"device" : "36799882","button" : "PowerOff"},{"device" : "36799868","button" : "PowerOff"}'
-  tv_only_off:
-    method: put
-    url: 'http://192.168.67.104:8081/harmony/press'
-    payload: '{"device" : "36799863","button" : "PowerOff"}'
-# Lights
+
 #light: !include light.yaml
 
 notify:
@@ -189,31 +76,17 @@ notify:
     platform: nma
     api_key: !secret nma
 
-# Logbook
 logbook: #!include logbook.yaml
 
 #logger: !include logger.yaml
 
-# Recorder
-recorder: #!include recorder.yaml
+recorder:
   db_url: !secret db_url
 
-# Scenes
 #scene: !include scene.yaml
 
-# Scripts
-#script: !include script.yaml
-
-# Sensors
-sensor: !include sensor.yaml
-
-# Switches
-switch: !include switch.yaml
-
-# Weblinks
 #weblink: !include weblink.yaml
 
-# Zones
 #zone: !include zone.yaml  
 
 # Show links to resources in log and frontend

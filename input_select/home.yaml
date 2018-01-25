@@ -1,0 +1,18 @@
+sebas_status_dropdown:
+  name: Sebas
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home
+gen_status_dropdown:
+  name: Gen
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home

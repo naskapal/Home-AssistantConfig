@@ -1,0 +1,51 @@
+rds1:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "8", "0", "OK"]
+rds2:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "8", "1", "OK"]
+tva:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "0", "4", "OK"]
+vtele:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "0", "3", "OK"]
+casa:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "5", "0", "OK"]
+serieplus:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "6", "0", "OK"]
+tvon:
+  sequence:
+  - service: rest_command.tvon
+tvoff:
+  sequence:
+  - service: rest_command.tvoff
+tv_only_off:
+  sequence:
+  - service: rest_command.tv_only_off
