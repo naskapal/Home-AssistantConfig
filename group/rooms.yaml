@@ -24,6 +24,10 @@
       - light.enbas_1
       - light.enbas_2
       - light.enbas3
+  Main_Cuisine:
+    name: Cuisine
+    entities:
+      - sensor.newcuisine
   Main_Stairs_lights:
     name: Stairs Lights
     entities:

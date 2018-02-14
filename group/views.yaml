@@ -10,12 +10,26 @@
       - group.main_doors_sensor
       - group.main_trackers
       - group.people_status
-      - group.main_channels_group
       - group.main_automations
       - group.home_modes
       - group.internet
       - group.cam_motion_sensor
       - camera.yvo
+
+# TV
+  Main_TV_view:
+    name: TV
+    view: yes
+    entities:
+      - group.main_rds1
+      - group.main_rds2
+      - group.main_tva
+      - group.main_vtele
+      - group.main_serieplus
+      - group.main_casa
+      - group.main_tvsport
+      - group.main_channels_group
+
 # weather view
   Main_Weather_view:
     name: Weather
@@ -67,10 +81,13 @@
       - light.hue_color_lamp_3
       - media_player.speaker_1
       - group.main_plex_group
+      - group.main_cuisine
+      - group.main_led_strip_group
       - media_player.speaker_2
       - remote.harmony
       - group.main_chromecast_group
       - switch.livingroomtvstbdenon
+      - switch.camera_stop_start
       - group.fibaro_not_used
       - group.aeotec_not_used
       #- group.Sebas_trackers

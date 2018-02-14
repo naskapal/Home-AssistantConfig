@@ -9,6 +9,13 @@
       command_on: "/home/homeassistant/.homeassistant/on.sh"
       command_off: "/home/homeassistant/.homeassistant/off.sh"
 
+#stop camera start camera
+- platform: command_line
+  switches:
+    camera_stop_start:
+      command_on: "sudo /etc/init.d/displaycameras start"
+      command_off: "sudo /etc/init.d/displaycameras stop"
+  
 - platform: template
   switches:
     scanner:

@@ -1,50 +1,68 @@
 ##################################################################################
 ##                               Custom light sensors name +                    ##
 ##################################################################################
+  light.salon1:
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
+  light.salon2:
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
 
 ##################################################################################
 ##                               Custom Cuisine lights                          ##
 ##################################################################################
   light.cusine1:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.cuisine2:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.cusine3:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.cuisine4:
-     hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.cusine5:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
     
 ##################################################################################
 ##                               Custom Basement lights                         ##
 ##################################################################################
     
   light.enbas_1:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.enbas_2:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.enbas3:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
 
 ##################################################################################
 ##                               Custom Livinroom lights                        ##
 ##################################################################################
     
-  light.salon1:
-    hidden: true
-  light.salon2:
-    hidden: true
+#  light.salon1:
+#    hidden: true
+#  light.salon2:
+#    hidden: true
     
 ##################################################################################
 ##                               Custom Entrance lights                         ##
 ##################################################################################
     
   light.hue_color_lamp_1:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.marche1:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.marche2:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
   light.hue_color_lamp_2:
-    hidden: true
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true

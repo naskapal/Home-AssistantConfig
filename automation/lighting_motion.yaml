@@ -2,7 +2,41 @@
 ##                               Lights Automations                             ##
 ##################################################################################
 
+  - alias: "Restart HA"
+    trigger:
+      platform: homeassistant
+      event: start
+    action:
+      service: homeassistant.turn_on
+      entity_id: switch.camera_stop_start
 
+##################################################################################
+##                               Cuisine                                     ##
+##################################################################################
+
+# test for tts on lights trigger
+  - alias: "kitchen lights on"
+    trigger:
+      - platform: state
+        entity_id: sensor.newcuisine
+        to: '1_click'
+    action:
+      service: homeassistant.turn_on
+      entity_id:
+        - light.flux1
+        - light.flux2
+
+# test for tts on lights trigger
+  - alias: "kitchen lights off"
+    trigger:
+      - platform: state
+        entity_id: sensor.newcuisine
+        to: '4_click'
+    action:
+      service: homeassistant.turn_off
+      entity_id:
+        - light.flux1
+        - light.flux2
 ##################################################################################
 ##                               Dining Room                                    ##
 ##################################################################################
@@ -15,7 +49,7 @@
         to: 'on'
     action:
       service: tts.amazon_polly_say
-      entity_id: media_player.ker_1
+      entity_id: media_player.speaker_1
       data:
         message: 'Lights turned on'
 

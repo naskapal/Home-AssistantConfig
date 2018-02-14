@@ -23,22 +23,73 @@
     name: Plex
     entities:
       - sensor.plex
+# led strip
+  Main_LED_Strip_Group:
+    name: LED Strips
+    entities:
+      - light.flux1
+      - light.flux2
+      - light.yeelight1
+
 #chromecast
   Main_Chromecast_Group:
     name: Chromecast
     entities:
       - sensor.livingroomchromecast
+#Main_rds1
+  Main_rds1:
+    name: RDS1
+    control: hidden
+    entities:
+      - sensor.zap
+      - script.rds1
+#Main_rds2
+  Main_rds2:
+    name: RDS2
+    control: hidden
+    entities:
+      - sensor.zaprds2
+      - script.rds2
+#Main_tva
+  Main_tva:
+    name: TVA
+    control: hidden
+    entities:
+      - sensor.zaptva
+      - script.tva
+#Main_vtele
+  Main_vtele:
+    name: VTELE
+    control: hidden
+    entities:
+      - sensor.zapvtele
+      - script.vtele
+#Main_serieplus
+  Main_serieplus:
+    name: SERIEPLUS
+    control: hidden
+    entities:
+      - sensor.zapserieplus
+      - script.serieplus
+#Main_casa
+  Main_casa:
+    name: CASA
+    control: hidden
+    entities:
+      - sensor.zapcasa
+      - script.casa
+#Main_tvsport
+  Main_tvsport:
+    name: TVSPORT
+    control: hidden
+    entities:
+      - sensor.zaptvsport
+      - script.tvsport
 #channels
   Main_Channels_Group:
     name: Channels
     control: hidden
     entities:
-      - script.rds1
-      - script.rds2
-      - script.tva
-      - script.vtele
-      - script.serieplus
-      - script.casa
       - script.tvon
       - script.tvoff
       - script.tv_only_off
@@ -130,6 +181,7 @@
       - automation.dining_room_lights_on
       - automation.stairs_lights_on_when_dark
       - automation.turn_off_stairs_light_10_seconds_after_last_movement
+      - automation.kitchen_lights_on
 
 #Dual trackers for efficiency
   Sebas_trackers:
@@ -144,6 +196,7 @@
     entities:
       - sensor.router
       - sensor.google
+      - sensor.external_ip
       
   fibaro_not_used:
     name: Fibaro other sensors

@@ -155,7 +155,7 @@
 - alias: "RDS1 from HASS"
   trigger:
     platform: state
-    entity_id: input_select.sportchannels
+    entity_id: input_select.test_tv_channels
     to: 'RDS1'
   action:
     service: script.turn_on
@@ -163,7 +163,7 @@
 - alias: "RDS2 from HASS"
   trigger:
     platform: state
-    entity_id: input_select.sportchannels
+    entity_id: input_select.test_tv_channels
     to: 'RDS2'
   action:
     service: script.turn_on

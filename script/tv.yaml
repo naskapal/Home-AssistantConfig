@@ -5,6 +5,7 @@ rds1:
     data:
       device: 36799882
       command: ["1", "8", "8", "0", "OK"]
+
 rds2:
   sequence:
   - service: remote.send_command
@@ -40,6 +41,13 @@ serieplus:
     data:
       device: 36799882
       command: ["1", "8", "6", "0", "OK"]
+tvsport:
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.livingroom
+    data:
+      device: 36799882
+      command: ["1", "8", "8", "3", "OK"]
 tvon:
   sequence:
   - service: rest_command.tvon

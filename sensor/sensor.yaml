@@ -5,7 +5,7 @@
 ##################################################################################
 ##                               ZWave Sensors                                  ##
 ##################################################################################
-
+- platform: hue
 # ZWave Aeotec sensors
 - platform: template
   sensors:
@@ -80,21 +80,51 @@
       friendly_name: 'Fibaro sensor Battery'
       value_template: '{{ states.zwave.fibaro_system_fgms001zw5_motion_sensor.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor
     bat_patio_sensor:
       friendly_name: 'Patio sensor Battery'
       value_template: '{{ states.zwave.aeotec_zw112_door_window_sensor_6.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: zwave.aeotec_zw112_door_window_sensor_6
     bat_basement_window_sensor:
       friendly_name: 'Basement window sensor Battery'
       value_template: '{{ states.zwave.aeotec_zw112_door_window_sensor_6_2.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: zwave.aeotec_zw112_door_window_sensor_6_2
         
 ##################################################################################
 ##                               System monitoring sensor                       ##
 ##################################################################################
+- platform: rest
+  resource: http://ip.jsontest.com
+  name: External IP
+  value_template: '{{ value_json.ip }}'
+
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=58592
+  name: zap
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=73275
+  name: zaprds2
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=72755
+  name: zaptva
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=58688
+  name: zapvtele
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=56109
+  name: zapserieplus
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=59532
+  name: zapcasa
+  value_template: '{{ value_json.results.schedules[0].title }}'
+- platform: rest
+  resource: http://api.zap2it.com/tvlistings/webservices/whatson?stnlt=73142
+  name: zaptvsport
+  value_template: '{{ value_json.results.schedules[0].title }}' 
 
 - platform: systemmonitor
   resources:
@@ -138,11 +168,9 @@
     sebas_status:
       value_template: '{{ states.input_select.sebas_status_dropdown.state }}'
       friendly_name: 'Sebas'
-      entity_id: input_select.sebas_status_dropdown
     gen_status:
       value_template: '{{ states.input_select.gen_status_dropdown.state }}'
       friendly_name: 'Gen'
-      entity_id: input_select.gen_status_dropdown
     livingroomchromecast:
       friendly_name: 'Living Room Chromecast'
       value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"

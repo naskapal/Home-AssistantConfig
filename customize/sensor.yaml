@@ -6,6 +6,10 @@
 ##                               Custom Fibaro config                           ##
 ##################################################################################
 
+  sensor.basement_window_status:
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
+
 #Entrance fibaro
   sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
     friendly_name: FIBARO Sensor Temperature
@@ -19,7 +23,7 @@
     hidden: true
   sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
     friendly_name: FIBARO Sensor Luminance
-    
+
 ##################################################################################
 ##                               Custom ZWave config                            ##
 ##################################################################################
@@ -33,6 +37,8 @@
     friendly_name: Basement Windows Sensor
   sensor.bedroom_door_status:
     icon: mdi:glassdoor
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
 
 ##################################################################################
 ##                               Custom Weather config                          ##

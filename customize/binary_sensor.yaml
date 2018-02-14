@@ -5,5 +5,8 @@
 # Fibaro binary sensors
   binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
     friendly_name: FIBARO Sensor General
+    custom_ui_state_card: state-card-custom-ui
+    show_last_changed: true
+
   binary_sensor.google:
       hidden: true

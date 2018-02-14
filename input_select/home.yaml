@@ -16,3 +16,7 @@ gen_status_dropdown:
     - Away
     - Extended Away
   initial: Home
+test_tv_channels:
+  options:
+    - RDS1
+    - RDS2

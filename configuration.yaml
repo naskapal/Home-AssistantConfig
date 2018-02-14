@@ -70,6 +70,17 @@ remote:
     host: 192.168.67.107
 
 #light: !include light.yaml
+light:
+  - platform: flux_led
+    devices:
+      192.168.67.56:
+        name: flux1
+      192.168.67.58:
+        name: flux2
+  - platform: yeelight
+    devices:
+      192.168.67.57:
+        name: yeelight1
 
 notify:
   - name: NOTIFIER_NAME
@@ -110,6 +121,10 @@ hue:
 
 # Enables the frontend
 frontend:
+  extra_html_url:
+    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
+  extra_html_url_es5:
+    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui-es5.html
 
 # Configures frontend options
 http:
@@ -149,7 +164,7 @@ tts:
     aws_access_key_id: !secret aws_api_key
     aws_secret_access_key: !secret aws_access_key
     region_name: 'us-east-2'
-    text_type: ssml
+    text_type: text
     voice: Joanna
     cache: True
 
