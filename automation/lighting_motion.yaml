@@ -2,13 +2,13 @@
 ##                               Lights Automations                             ##
 ##################################################################################
 
-  - alias: "Restart HA"
-    trigger:
-      platform: homeassistant
-      event: start
-    action:
-      service: homeassistant.turn_on
-      entity_id: switch.camera_stop_start
+#  - alias: "Restart HA"
+#    trigger:
+#      platform: homeassistant
+#      event: start
+#    action:
+#      service: homeassistant.turn_on
+#      entity_id: switch.camera_stop_start
 
 ##################################################################################
 ##                               Cuisine                                     ##
@@ -61,7 +61,7 @@
   - alias: "Stairs Lights on when dark"
     trigger:
       - platform: state
-        entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+        entity_id: binary_sensor.sensor
         to: 'on'
     condition:  
       - condition: numeric_state
@@ -75,7 +75,7 @@
   - alias: Turn off stairs light 10 seconds after last movement
     trigger:
       platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      entity_id: binary_sensor.sensor
       to: 'off'
       for:
         seconds: 10

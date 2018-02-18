@@ -6,7 +6,8 @@
 ##                               Custom Fibaro config                           ##
 ##################################################################################
 
-  sensor.basement_window_status:
+  binary_sensor.sensor_3:
+    friendly_name: Patio Door Sensor
     custom_ui_state_card: state-card-custom-ui
     show_last_changed: true
 
@@ -35,7 +36,8 @@
 #Basement window sensor        
   zwave.aeotec_zw112_door_window_sensor_6_2:
     friendly_name: Basement Windows Sensor
-  sensor.bedroom_door_status:
+  binary_sensor.sensor_2:
+    friendly_name: Basement Windows Sensor
     icon: mdi:glassdoor
     custom_ui_state_card: state-card-custom-ui
     show_last_changed: true

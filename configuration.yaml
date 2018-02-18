@@ -109,7 +109,7 @@ recorder:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /srv/homeassistant/lib/python3.5/site-packages/python_openzwave/ozw_config
+  config_path: /usr/local/lib/python3.6/site-packages/python_openzwave/ozw_config
 
 hue:
   bridges:
@@ -171,11 +171,11 @@ tts:
 # Track the sun
 sun:
 
-media_player:
-  - platform: vlc
-    name: speaker_1
-    arguments: '--aout alsa --alsa-audio-device=hw:0,0'
-  - platform: vlc
-    name: speaker_2
-    arguments: '--alsa-audio-device=hw:0,0'
+#media_player:
+#  - platform: vlc
+#    name: speaker_1
+#    arguments: '--aout alsa --alsa-audio-device=hw:0,0'
+#  - platform: vlc
+#    name: speaker_2
+#    arguments: '--alsa-audio-device=hw:0,0'
 

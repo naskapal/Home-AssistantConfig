@@ -1,12 +1,12 @@
 tvon:
   method: put
-  url: 'http://192.168.67.104:8081/harmony/press'
+  url: 'http://192.168.67.122:8081/harmony/press'
   payload: '{"device" : "36799863","button" : "PowerOn"},{"device" : "36799882","button" : "PowerOn"},{"device" : "36799868","button" : "PowerOn"}'
 tvoff:
   method: put
-  url: 'http://192.168.67.104:8081/harmony/press'
+  url: 'http://192.168.67.122:8081/harmony/press'
   payload: '{"device" : "36799863","button" : "PowerOff"},{"device" : "36799882","button" : "PowerOff"},{"device" : "36799868","button" : "PowerOff"}'
 tv_only_off:
   method: put
-  url: 'http://192.168.67.104:8081/harmony/press'
+  url: 'http://192.168.67.122:8081/harmony/press'
   payload: '{"device" : "36799863","button" : "PowerOff"}'

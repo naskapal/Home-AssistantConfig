@@ -1,0 +1,96 @@
+light.cuisine2:
+  platform: hue
+  unique_id: 00:17:88:01:10:2b:b4:f2-0b
+light.enbas_2:
+  platform: hue
+  unique_id: 00:17:88:01:02:09:20:24-0b
+light.cuisine4:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:72:03-0b
+light.enbas3:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:70:fd-0b
+light.hue_color_lamp_1:
+  platform: hue
+  unique_id: 00:17:88:01:10:53:8e:e3-0b
+light.cusine5:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:6b:7a-0b
+light.cusine3:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:71:c7-0b
+light.hue_color_lamp_2:
+  platform: hue
+  unique_id: 00:17:88:01:10:36:19:ab-0b
+light.salon1:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:62:9f-0b
+light.marche1:
+  platform: hue
+  unique_id: 00:17:88:01:02:74:5b:ab-0b
+light.hue_color_lamp_3:
+  platform: hue
+  unique_id: 00:17:88:01:10:42:f0:2f-0b
+light.salon2:
+  platform: hue
+  unique_id: 00:17:88:01:02:08:f6:75-0b
+light.marche2:
+  platform: hue
+  unique_id: 00:17:88:01:02:74:39:24-0b
+light.cusine1:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:6d:00-0b
+light.enbas_1:
+  platform: hue
+  unique_id: 00:17:88:01:02:08:76:92-0b
+light.stairs_lights:
+  platform: hue
+  unique_id: 00:17:88:5E:D3:16-16
+light.camera:
+  platform: hue
+  unique_id: 00:17:88:5E:D3:1D-1D
+sensor.alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+binary_sensor.sensor:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  platform: zwave
+  unique_id: 3-72057594093256754
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  platform: zwave
+  unique_id: 3-72057594093257106
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  platform: zwave
+  unique_id: 3-72057594094305441
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  platform: zwave
+  unique_id: 3-72057594095009793
+binary_sensor.sensor_2:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.alarm_type_2:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.alarm_level_2:
+  platform: zwave
+  unique_id: 5-72057594127859729
+binary_sensor.sensor_3:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.alarm_type_3:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.alarm_level_3:
+  platform: zwave
+  unique_id: 6-72057594144636945

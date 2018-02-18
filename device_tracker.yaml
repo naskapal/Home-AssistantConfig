@@ -8,9 +8,9 @@
 
   - platform: unifi
     track_new_devices: false
-    host: 192.168.67.105
+    host: 192.168.67.121
     username: admin
-    port: 9443
+    port: 8443
     password: !secret unifi_pass
     verify_ssl: False
     interval_seconds: 30

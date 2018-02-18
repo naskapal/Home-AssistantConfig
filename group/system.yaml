@@ -149,15 +149,17 @@
     name: Fibaro Entrance Sensor
     entities:
       - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-      - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      - binary_sensor.sensor
       - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
       - sensor.bat_fibaro
       
   Main_Doors_Sensor:
     name: ZWave Doors Sensor
     entities:
-      - sensor.bedroom_door_status
-      - sensor.basement_window_status
+            #      - sensor.bedroom_door_status
+            #      - sensor.basement_window_status
+      - binary_sensor.sensor_2
+      - binary_sensor.sensor_3
       - sensor.bat_patio_sensor
       - sensor.bat_basement_window_sensor
 
