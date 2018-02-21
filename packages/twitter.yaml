@@ -1,0 +1,67 @@
+
+notify:
+  - name: UnbornXHA
+    platform: twitter
+    consumer_key: !secret twitter_consumer_key
+    consumer_secret: !secret twitter_consumer_secret
+    access_token: !secret twitter_access_token
+    access_token_secret: !secret twitter_access_token_secret
+
+### Building out some Historical stats for tweeting. #####################
+
+automation:
+  - alias: 'Closed Github Issue'
+    hide_entity: True
+    trigger:
+      - platform: event
+        event_type: closed_github
+
+    action:
+      - service: script.tweet_engine
+        data_template:
+          tweet: >-
+            {% set repo = trigger.event.data.repo %}
+            {% set issue = trigger.event.data.issue %}
+            {% set issueurl = trigger.event.data.issueurl %}
+            {% set phrases = [
+              "New Code Alert: " ~ issue ~ "(" ~ issueurl ~ "). Repo: (https://github.com/unbornx/Home-AssistantConfig/commits/master) "
+            ] %}
+            {% set hashtags = [
+              "#Github",
+              "#HomeAutomation",
+              "#SmartHomeCode"
+            ] %}
+            {{ phrases|random ~ " " ~ hashtags|random }}
+
+
+  - alias: 'Random House stats'
+    hide_entity: True
+    trigger:
+      - platform: time
+        hours: '/3'
+        minutes: 01
+        seconds: 00
+    condition:
+      - condition: template
+        value_template: >
+          {%- if states.automation.random_house_stats.attributes.last_triggered -%}
+            {{ (as_timestamp(now()) - as_timestamp(states.automation.random_house_stats.attributes.last_triggered)) > 10000 }}
+          {%- else -%}
+            true
+          {%- endif -%}
+    action:
+      - delay: '0{{ range(0,2) | random | int }}:{{ range(10,59) | random | int }}:00'
+      - service: script.tweet_engine
+        data_template:
+          tweet: >
+            {{ [
+            "The #Docker Host has been running for {{states.sensor.since_last_boot.state}} (http://www.vmwareinfo.com/2018/02/journey-to-docker.html)",
+            "The #Docker Host for Home Assistant is using {{states.sensor.disk_use_percent_.state}}% of the hard drive currently. (http://www.vmwareinfo.com/2018/02/journey-to-docker.html)",
+            "Inside  is {{staets.sensor.fibaro_system_fgms001zw5_motion_sensor_temperature.state}}. I keep the average temperature at 22. #Weather",
+            "Outside  is {{states.sensor.pws_temp_c.state}}.",
+            "Average internet stats are Download: {{states.sensor.speedtest_download.state}} Mbit/s & Upload {{states.sensor.speedtest_upload.state}} Mbit/s.",
+            "My @telebec internet download speed is about {{states.sensor.speedtest_download.state}} Mbit/s and I am a #cordcutter. @TabloTV",
+            "I am keeping track of the current #Tesla stock price. It is {{ states.sensor.tesla.state  | round }} dollars. #Solar",
+            "I am keeping track of the current #Bitcoin prices. It is {{ states.sensor.bitcoin.state  | round }} dollars. #BTC",
+            "Average Cloud Coverage: {{states.sensor.pws_precip_1d.state}}%"
+            ] | random + " #RandomStat"}}

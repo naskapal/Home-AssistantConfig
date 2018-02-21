@@ -199,6 +199,8 @@
       - sensor.router
       - sensor.google
       - sensor.external_ip
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
       
   fibaro_not_used:
     name: Fibaro other sensors
@@ -215,9 +217,9 @@
       - sensor.aeotec_zw112_door_window_sensor_6_alarm_type
       - sensor.aeotec_zw112_door_window_sensor_6_sourcenodeid
       
-  cam_motion_sensor:
-    name: Camera motions
-    entities:
-      - sensor.back_yard_cam_motion_detected
-      - sensor.parking_cam_motion_detected
-      - sensor.side_cam_motion_detected
+#  cam_motion_sensor:
+#    name: Camera motions
+#    entities:
+#      - sensor.back_yard_cam_motion_detected
+#      - sensor.parking_cam_motion_detected
+#      - sensor.side_cam_motion_detected

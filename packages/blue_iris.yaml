@@ -1,0 +1,79 @@
+homeassistant:
+  customize:
+
+    package.node_anchors:
+      customize: &customize
+        package: 'blue_iris'
+
+    binary_sensor.motion_outdoor:
+      friendly_name: Shed Camera
+      device_class: motion
+    binary_sensor.motion_outdoor_driveway:
+      friendly_name: Driveway
+      device_class: motion
+    binary_sensor.motion_outdoor_frontdoor:
+      friendly_name: Front Door
+      device_class: motion
+
+
+group:
+  blue_iris_motion_card:
+   name: Camera Motion
+   entities:
+     - binary_sensor.motion_outdoor
+     - binary_sensor.motion_outdoor_driveway
+     - binary_sensor.motion_outdoor_frontdoor
+
+#######################################################################################################################
+###### Motion sensor templates for blue Iris  #########################################################################
+#######################################################################################################################
+binary_sensor:
+  - platform: template
+    sensors:
+      motion_outdoor:
+#        friendly_name: 'Shed Cam'
+        value_template: >-
+          {% if states('binary_sensor.blueirisshed') %}
+          {% if is_state('binary_sensor.blueirisshed', 'on') %}
+             True
+          {% elif is_state('binary_sensor.blueirisshed', 'off') %}
+             False
+          {% else %}
+          {{ states('binary_sensor.blueirisshed') }}
+          {% endif %}
+          {% else %}
+            False
+          {% endif %}
+  - platform: template
+    sensors:
+      motion_outdoor_driveway:
+#        friendly_name: 'Driveway'
+        value_template: >-
+           {% if states('binary_sensor.blueiriscam2') %}
+           {% if is_state('binary_sensor.blueiriscam2', 'on') %}
+              True
+           {% elif is_state('binary_sensor.blueiriscam2', 'off') %}
+              False
+           {% else %}
+           {{ states('binary_sensor.blueiriscam2') }}
+           {% endif %}
+           {% else %}
+             False
+           {% endif %}
+  - platform: template
+    sensors:
+      motion_outdoor_frontdoor:
+ #       friendly_name: 'Swamp'
+        value_template: >-
+          {% if states('binary_sensor.blueiriscam5') %}
+          {% if is_state('binary_sensor.blueiriscam5', 'on') %}
+             True
+          {% elif is_state('binary_sensor.blueiriscam5', 'off') %}
+             False
+          {% else %}
+          {{ states('binary_sensor.blueiriscam5') }}
+          {% endif %}
+          {% else %}
+            False
+          {% endif %}
+

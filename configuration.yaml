@@ -6,6 +6,8 @@ homeassistant:
   unit_system: metric
   time_zone: America/Toronto
   customize: !include_dir_merge_named customize/
+  packages: !include_dir_named packages
+  
   
 panel_custom: 
   - name: floorplan
@@ -19,28 +21,31 @@ automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
 
 camera:
-  platform: generic
-  still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=XLA&brand=wui&num=1&delay=15&type=C0R&frame=0&scale=1.000&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=1&lightning=0&smooth=0&rand=25277952&lat=0&lon=0&label=you
-  name: YVO
-  
-amcrest:
-  - host: 192.168.67.103
-    username: admin
-    password: !secret cam1_pass
-    name: Back Yard Cam
+  - platform: generic
+    still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=XLA&brand=wui&num=1&delay=15&type=C0R&frame=0&scale=1.000&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=1&lightning=0&smooth=0&rand=25277952&lat=0&lon=0&label=you
+    name: YVO
+#  - platform: generic
+#    still_image_url: https://www.waze.com/livemap?zoom=14&lat=48.1017&lon=-77.80457
+#    name: waze  
+
+#amcrest:
+#  - host: 192.168.67.103
+#    username: admin
+#    password: !secret cam1_pass
+#    name: Back Yard Cam
 #    resolution: high
 #    stream_source: snapshot
-    sensors:
-      - motion_detector
-  
-  - host: 192.168.67.112
-    username: admin
-    password: !secret cam2_pass
-    name: Parking Cam
+#    sensors:
+#      - motion_detector
+#  
+#  - host: 192.168.67.112
+#    username: admin
+#    password: !secret cam2_pass
+#    name: Parking Cam
 #    resolution: high
 #    stream_source: snapshot
-    sensors:
-      - motion_detector
+#    sensors:
+#      - motion_detector
 
 #  - host: 192.168.67.114
 #    username: admin
@@ -89,7 +94,7 @@ notify:
 
 logbook: #!include logbook.yaml
 
-#logger: !include logger.yaml
+#logger:
 
 recorder:
   db_url: !secret db_url

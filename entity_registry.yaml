@@ -94,3 +94,6 @@ sensor.alarm_type_3:
 sensor.alarm_level_3:
   platform: zwave
   unique_id: 6-72057594144636945
+media_player.shield_tablet:
+  platform: plex
+  unique_id: f23463b7a47ede3a-com-plexapp-android

@@ -1,0 +1,18 @@
+##############################################################################
+###  New Device has connected to the network.  let everyone know.
+##############################################################################
+
+- alias: "New device connected"
+  trigger:
+    - platform: event
+      event_type: device_tracker_new_device
+
+  action:
+    - service: script.tweet_engine
+      data_template:
+        tweet: >
+          {{ [
+          "New Device on the Network! HA  has alerted me me and now it is locked down.",
+          "Constant monitoring of the network by HA has detected a new device in the environment."
+          ] | random + ""}}
+##############################################################################
