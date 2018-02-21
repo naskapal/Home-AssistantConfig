@@ -1,6 +1,0 @@
-binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
-  ignored: false
-  polling_intensity: 1
-zwave.fibaro_system_fgms001zw5_motion_sensor:
-  ignored: false
-  polling_intensity: 1
