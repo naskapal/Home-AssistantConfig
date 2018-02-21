@@ -26,3 +26,8 @@ pyozw.sqlite
 html5_push_registrations.conf
 ip_bans.yaml
 /icloud/*
+zwave_device_config.yaml
+zwcfg_0xf790b7a0.old
+update.sh
+phue.old
+gitupdate.sh
