@@ -192,22 +192,22 @@
     - upload
 
 - platform: command_line
-  name:  921yulyvo
+  name: unoyulyvo
   command: "test.py YN921 YVO YUL"
   scan_interval: 14400
   unit_of_measurement: 'hr'
 
 - platform: template
   sensors:
-    921arrival:
-      value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[0] }}"
+    unoarrival:
+      value_template: "{% set list = states.sensor.unoyulyvo.state.split('_') %} {{ list[0] }}"
       friendly_name: 'Arrival'
-    921sarrival:
-      value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[1] }}"
+    unosarrival:
+      value_template: "{% set list = states.sensor.unoyulyvo.state.split('_') %} {{ list[1] }}"
       friendly_name: 'Scheduled-Arrival'
-    921departure:
-      value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[2] }}"
+    unodeparture:
+      value_template: "{% set list = states.sensor.unoyulyvo.state.split('_') %} {{ list[2] }}"
       friendly_name: 'Departure'
-    921sdeparture:
-      value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[3] }}"
+    unosdeparture:
+      value_template: "{% set list = states.sensor.unoyulyvo.state.split('_') %} {{ list[3] }}"
       friendly_name: 'Scheduled-Departure'

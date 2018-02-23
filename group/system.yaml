@@ -22,10 +22,10 @@
   Flights_Group:
     name: Val-d'Or Flights times
     entities:
-      - sensor.921arrival
-      - sensor.921sarrival
-      - sensor.921departure
-      - sensor.921sdeparture
+      - sensor.unoarrival
+      - sensor.unosarrival
+      - sensor.unodeparture
+      - sensor.unosdeparture
 
 # plex
   Main_Plex_Group:
