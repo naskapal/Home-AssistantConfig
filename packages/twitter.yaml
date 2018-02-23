@@ -58,10 +58,8 @@ automation:
             "The #Docker Host has been running for {{states.sensor.since_last_boot.state}} (http://www.vmwareinfo.com/2018/02/journey-to-docker.html)",
             "The #Docker Host for Home Assistant is using {{states.sensor.disk_use_percent_.state}}% of the hard drive currently. (http://www.vmwareinfo.com/2018/02/journey-to-docker.html)",
             "Inside  is {{staets.sensor.fibaro_system_fgms001zw5_motion_sensor_temperature.state}}. I keep the average temperature at 22. #Weather",
-            "Outside  is {{states.sensor.pws_temp_c.state}}.",
+            "Outside temperature is {{states.sensor.pws_temp_c.state}}.",
             "Average internet stats are Download: {{states.sensor.speedtest_download.state}} Mbit/s & Upload {{states.sensor.speedtest_upload.state}} Mbit/s.",
-            "My @telebec internet download speed is about {{states.sensor.speedtest_download.state}} Mbit/s and I am a #cordcutter. @TabloTV",
-            "I am keeping track of the current #Tesla stock price. It is {{ states.sensor.tesla.state  | round }} dollars. #Solar",
-            "I am keeping track of the current #Bitcoin prices. It is {{ states.sensor.bitcoin.state  | round }} dollars. #BTC",
+            "My @telebec internet download speed is about {{states.sensor.speedtest_download.state}} Mbit/s.",
             "Average Cloud Coverage: {{states.sensor.pws_precip_1d.state}}%"
             ] | random + " #RandomStat"}}

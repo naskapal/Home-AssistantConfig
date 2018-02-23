@@ -15,6 +15,7 @@
       - group.internet
       - group.pihole
       - camera.yvo
+      - group.flights_group
       - camera.waze
       - group.blue_iris_motion_card
 

@@ -33,3 +33,11 @@ Running those pretty much standard. I use MACVLAN so they can be on my local LAN
 * AEON labs Zwave USB stick
 * AEON Labs window and door sensors
 * Fibaro Z-Wave Motion Sensor - FGMS-001
+* Logitech Harmony hub
+
+**TODO**
+
+* Wall mounted tablets
+* Xiaomi sensors
+* Conbee gateway
+* Amps and mixers for audio
