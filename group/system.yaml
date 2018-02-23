@@ -20,12 +20,12 @@
 
 # yvoyul sensors
   Flights_Group:
-  name: Val-d'Or Flights times
-  entities:
-    - sensor.921arrival
-    - sensor.921sarrival
-    - sensor.921departure
-    - sensor.921sdeparture
+    name: Val-d'Or Flights times
+    entities:
+      - sensor.921arrival
+      - sensor.921sarrival
+      - sensor.921departure
+      - sensor.921sdeparture
 
 # plex
   Main_Plex_Group:

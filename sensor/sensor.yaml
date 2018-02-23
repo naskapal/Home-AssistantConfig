@@ -206,7 +206,7 @@
       value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[1] }}"
       friendly_name: 'Scheduled-Arrival'
     921departure:
-      value_template: "{% set list = states.sensor.921getdata.state.split('_') %} {{ list[2] }}"
+      value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[2] }}"
       friendly_name: 'Departure'
     921sdeparture:
       value_template: "{% set list = states.sensor.921yulyvo.state.split('_') %} {{ list[3] }}"
