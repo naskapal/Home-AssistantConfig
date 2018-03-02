@@ -116,6 +116,10 @@ zwave:
   usb_path: /dev/ttyACM0
   config_path: /usr/local/lib/python3.6/site-packages/python_openzwave/ozw_config
 
+deconz:
+  host: 192.168.67.128
+  port: 8080
+
 hue:
   bridges:
     - host: 192.168.67.106
