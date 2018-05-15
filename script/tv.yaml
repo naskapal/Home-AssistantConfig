@@ -50,10 +50,13 @@ tvsport:
       command: ["1", "8", "8", "3", "OK"]
 tvon:
   sequence:
-  - service: rest_command.tvon
+    service: rest_command.tvon
+    entity_id: rest_command.tvon
 tvoff:
   sequence:
-  - service: rest_command.tvoff
+    service: rest_command.tvoff
+    entity_id: rest_command.tvoff
 tv_only_off:
   sequence:
-  - service: rest_command.tv_only_off
+    service: rest_command.tv_only_off
+    entity_id: rest_command.tv_only_off

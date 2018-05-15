@@ -82,6 +82,8 @@ light:
         name: flux1
       192.168.67.58:
         name: flux2
+      192.168.67.34:
+        name: flux3
   - platform: yeelight
     devices:
       192.168.67.57:
@@ -118,7 +120,7 @@ zwave:
 
 deconz:
   host: 192.168.67.128
-  port: 8080
+  port: 80
 
 hue:
   bridges:
@@ -134,6 +136,16 @@ frontend:
     - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
   extra_html_url_es5:
     - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui-es5.html
+
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - group.main_stairs_lights
+      include_domains:
+        - switch
+        - input_boolean
+
 
 # Configures frontend options
 http:

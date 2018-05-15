@@ -10,6 +10,16 @@
       - input_boolean.speech_notifications
       - input_boolean.last_message
 
+  Main_basement_xiaomi_sensor:
+    name: Xiaomi Basement Sensors
+    entities:
+      - sensor.humidity_5
+      - sensor.lightlevel_2
+      - sensor.pressure_6
+      - sensor.temperature_4
+      - binary_sensor.presence_3
+      - binary_sensor.water_7
+
 # Hydroquebec
   Main_Hydro_Group:
     name: Hydro Quebec
@@ -27,17 +37,13 @@
       - sensor.unodeparture
       - sensor.unosdeparture
 
-# plex
-  Main_Plex_Group:
-    name: Plex
-    entities:
-      - sensor.plex
 # led strip
   Main_LED_Strip_Group:
     name: LED Strips
     entities:
       - light.flux1
       - light.flux2
+      - light.flux3
       - light.yeelight1
 
 #chromecast

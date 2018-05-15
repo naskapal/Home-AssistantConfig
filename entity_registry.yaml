@@ -1,99 +1,240 @@
 light.cuisine2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2b:b4:f2-0b
 light.enbas_2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:09:20:24-0b
 light.cuisine4:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:72:03-0b
 light.enbas3:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:70:fd-0b
 light.hue_color_lamp_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:53:8e:e3-0b
 light.cusine5:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:6b:7a-0b
 light.cusine3:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:71:c7-0b
 light.hue_color_lamp_2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:36:19:ab-0b
 light.salon1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:62:9f-0b
 light.marche1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:74:5b:ab-0b
 light.hue_color_lamp_3:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:42:f0:2f-0b
 light.salon2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:08:f6:75-0b
 light.marche2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:74:39:24-0b
 light.cusine1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2c:6d:00-0b
 light.enbas_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:08:76:92-0b
 light.stairs_lights:
+  name:
   platform: hue
   unique_id: 00:17:88:5E:D3:16-16
 light.camera:
+  name:
   platform: hue
   unique_id: 00:17:88:5E:D3:1D-1D
 sensor.alarm_type:
+  name:
   platform: zwave
   unique_id: 3-72057594094305281
 sensor.alarm_level:
+  name:
   platform: zwave
   unique_id: 3-72057594094305297
 binary_sensor.sensor:
+  name:
   platform: zwave
   unique_id: 3-72057594093240320
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  name:
   platform: zwave
   unique_id: 3-72057594093256722
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  name:
   platform: zwave
   unique_id: 3-72057594093256754
 sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  name:
   platform: zwave
   unique_id: 3-72057594093257106
 sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 3-72057594094305313
 sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  name:
   platform: zwave
   unique_id: 3-72057594094305441
 sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  name:
   platform: zwave
   unique_id: 3-72057594095009793
 binary_sensor.sensor_2:
+  name:
   platform: zwave
   unique_id: 5-72057594126794752
 sensor.alarm_type_2:
+  name:
   platform: zwave
   unique_id: 5-72057594127859713
 sensor.alarm_level_2:
+  name:
   platform: zwave
   unique_id: 5-72057594127859729
 binary_sensor.sensor_3:
+  name:
   platform: zwave
   unique_id: 6-72057594143571968
 sensor.alarm_type_3:
+  name:
   platform: zwave
   unique_id: 6-72057594144636929
 sensor.alarm_level_3:
+  name:
   platform: zwave
   unique_id: 6-72057594144636945
 media_player.shield_tablet:
+  name:
   platform: plex
   unique_id: f23463b7a47ede3a-com-plexapp-android
+light.hue_ambiance_spot_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:dc:54:99-0b
+light.hue_ambiance_spot_4:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:dc:47:0a-0b
+light.hue_ambiance_spot_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:9f:b1:7a-0b
+light.hue_ambiance_spot_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:9f:ad:91-0b
+binary_sensor.presence_3:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:b1:cd:e5-01-0406
+sensor.lightlevel_2:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:b1:cd:e5-01-0400
+sensor.pressure_6:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:f2:3e:89-01-0403
+sensor.temperature_4:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:f2:3e:89-01-0402
+sensor.humidity_5:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:f2:3e:89-01-0405
+binary_sensor.water_7:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:01:bb:e9:2e-01-0500
+media_player.chromecast0743:
+  name:
+  platform: cast
+  unique_id: 6b530470-ec85-e686-84a1-d45321a72f52
+sensor.daylight:
+  name:
+  platform: deconz
+  unique_id: 00:21:2e:ff:ff:01:ba:ad-01
+sensor.pws_heat_index_c:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,heat_index_c'
+sensor.pws_wind_kph:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,wind_kph'
+sensor.pws_precip_1d:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,precip_1d'
+sensor.pws_wind_dir:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,wind_dir'
+sensor.pws_precip_today_string:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,precip_today_string'
+sensor.pws_precip_1d_mm:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,precip_1d_mm'
+sensor.pws_wind_1d_kph:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,wind_1d_kph'
+sensor.pws_feelslike_c:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,feelslike_c'
+sensor.pws_alerts:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,alerts'
+sensor.pws_visibility_km:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,visibility_km'
+sensor.pws_temp_c:
+  name:
+  platform: wunderground
+  unique_id: '@-77.782800,48.100200,temp_c'
+zwave.aeotec_zw090_zstick_gen5_us:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.fibaro_system_fgms001zw5_motion_sensor:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.aeotec_zw112_door_window_sensor_6:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.aeotec_zw112_door_window_sensor_6_2:
+  name:
+  platform: zwave
+  unique_id: node-6

@@ -5,7 +5,6 @@
 ##################################################################################
 ##                               ZWave Sensors                                  ##
 ##################################################################################
-- platform: hue
 # ZWave Aeotec sensors
 - platform: template
   sensors:
@@ -174,12 +173,6 @@
     livingroomchromecast:
       friendly_name: 'Living Room Chromecast'
       value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"
-- platform: plex
-  host: 192.168.67.110
-  name: plex
-  username: !secret plexu
-  password: !secret plexp
-  token: !secret plext
 - platform: speedtest
   minute: 30
   hour:
@@ -193,7 +186,7 @@
 
 - platform: command_line
   name: unoyulyvo
-  command: "test.py YN921 YVO YUL"
+  command: "/usr/local/bin/python3 /config/test.py"
   scan_interval: 14400
   unit_of_measurement: 'hr'
 

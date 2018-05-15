@@ -18,49 +18,49 @@
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.76 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.76 | grep "1 received" | wc -l'
     name: 'is_appletv_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
   
   - platform: command_line
-    command: 'ping -c 1 192.168.67.103 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.103 | grep "1 received" | wc -l'
     name: 'is_cam1_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.112 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.112 | grep "1 received" | wc -l'
     name: 'is_cam2_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.114 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.114 | grep "1 received" | wc -l'
     name: 'is_cam3_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.106 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.106 | grep "1 received" | wc -l'
     name: 'is_philips_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.48 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.48 | grep "1 received" | wc -l'
     name: 'is_police_scanner_online'
     device_class: connectivity
     payload_on: 1
     payload_off: 0
     
   - platform: command_line
-    command: 'ping -c 1 192.168.67.107 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.107 | grep "1 received" | wc -l'
     name: 'is_real_harmony_online'
     device_class: connectivity
     payload_on: 1
@@ -81,7 +81,7 @@
     payload_off: 0
  
   - platform: command_line
-    command: 'ping -c 1 192.168.67.80 | grep "1 packets received" | wc -l'
+    command: 'ping -c 1 192.168.67.80 | grep "1 received" | wc -l'
     name: 'is_unifiap_online'
     device_class: connectivity
     payload_on: 1

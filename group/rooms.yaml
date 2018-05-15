@@ -27,7 +27,10 @@
   Main_Cuisine:
     name: Cuisine
     entities:
-      - sensor.newcuisine
+      - light.hue_ambiance_spot_1
+      - light.hue_ambiance_spot_2
+      - light.hue_ambiance_spot_3
+      - light.hue_ambiance_spot_4
   Main_Stairs_lights:
     name: Stairs Lights
     entities:

@@ -7,6 +7,7 @@
     view: yes 
     entities:
       - group.main_entrance_sensor
+      - group.main_basement_xiaomi_sensor
       - group.main_doors_sensor
       - group.main_trackers
       - group.people_status
@@ -72,6 +73,7 @@
     entities:
       - group.main_basement_lights
       - group.main_dining_lights
+      - group.main_cuisine
       - group.main_stairs_lights
       - group.main_livingroom_lights
 #      - media_player.chromecast0743
@@ -83,7 +85,6 @@
     entities:
       - light.hue_color_lamp_3
       - media_player.speaker_1
-      - group.main_plex_group
       - group.main_cuisine
       - group.main_led_strip_group
       - media_player.speaker_2

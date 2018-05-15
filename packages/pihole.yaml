@@ -25,7 +25,7 @@ homeassistant:
       friendly_name: DNS Queries Today
       icon: mdi:note-text
 
-    sensor.carlopihole:
+    sensor.sebaspihole:
       friendly_name: Pi Hole Server
       icon: mdi:filter-variant
 

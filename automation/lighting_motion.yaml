@@ -18,8 +18,8 @@
   - alias: "kitchen lights on"
     trigger:
       - platform: state
-        entity_id: sensor.newcuisine
-        to: '1_click'
+        entity_id: light.hue_ambiance_spot_1
+        to: 'on'
     action:
       service: homeassistant.turn_on
       entity_id:
@@ -30,8 +30,8 @@
   - alias: "kitchen lights off"
     trigger:
       - platform: state
-        entity_id: sensor.newcuisine
-        to: '4_click'
+        entity_id: light.hue_ambiance_spot_1
+        to: 'off'
     action:
       service: homeassistant.turn_off
       entity_id:
@@ -72,7 +72,7 @@
       entity_id: group.main_stairs_lights
 
 # turn of lights after 10 seconds from no motion - maybe do it with sequence..
-  - alias: Turn off stairs light 10 seconds after last movement
+  - alias: "Turn off stairs light 10 seconds after last movement"
     trigger:
       platform: state
       entity_id: binary_sensor.sensor
@@ -82,3 +82,33 @@
     action:
       service: homeassistant.turn_off
       entity_id: group.main_stairs_lights
+
+##################################################################################
+##                               Basement                                       ##
+##################################################################################
+
+#turn on lights when motion detected AND lux is below 4
+  - alias: "Basement Lights on when dark"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.presence_3
+        to: 'on'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.lightlevel_2
+        below: 50 
+    action:
+      service: homeassistant.turn_on
+      entity_id: group.main_basement_lights
+
+# turn of lights after 10 seconds from no motion - maybe do it with sequence..
+  - alias: "Turn off stairs light 10 seconds after last movement"
+    trigger:
+      platform: state
+      entity_id: binary_sensor.presence_3
+      to: 'off'
+      for:
+        seconds: 10
+    action:
+      service: homeassistant.turn_off
+      entity_id: group.main_basement_lights

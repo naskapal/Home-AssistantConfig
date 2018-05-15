@@ -13,6 +13,7 @@ Based on CCOSTAN https://github.com/CCOSTAN/Home-AssistantConfig configs and hun
 * Harmony hub emulator - restful-harmony:latest
 * HUE bridge emulator - bios/docker-alexa-ha-bridge:latest
 * Docker manager - portainer/portainer
+* deCONZ - Deconz docker for conbee zigbee gateway
 
 Running those pretty much standard. I use MACVLAN so they can be on my local LAN.
 
@@ -26,6 +27,7 @@ Running those pretty much standard. I use MACVLAN so they can be on my local LAN
 * Philips HUE white ambiance bulbs
 * Yeelight LED strip, wifi controlled
 * Supernight LED strip with wifi controller
+* Nexlux LED strip with wifi controller
 * Lighting Ever LED strip with wifi controller
 * Amazon echo DOT
 * Amcrests camera running on BlueIris
@@ -34,10 +36,10 @@ Running those pretty much standard. I use MACVLAN so they can be on my local LAN
 * AEON Labs window and door sensors
 * Fibaro Z-Wave Motion Sensor - FGMS-001
 * Logitech Harmony hub
+* ConBee USB from Dresden Elektronik as Zigbee gateway
+* Xiaomi Presence, temperature and water leak sensors
 
 **TODO**
 
 * Wall mounted tablets
-* Xiaomi sensors
-* Conbee gateway
 * Amps and mixers for audio
